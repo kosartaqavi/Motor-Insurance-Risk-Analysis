@@ -2,8 +2,7 @@
 
 ## معرفی پروژه
 
-این پروژه با هدف تحلیل عوامل مؤثر بر ریسک بیمه خودرو (Motor Third-Party Liability Insurance) انجام شده است.
-
+هدف پروژه: تحلیل عوامل مؤثر بر ریسک بیمه شخص ثالث خودرو
 در این پروژه، تعداد خسارت‌ها (Claim Frequency) و شدت خسارت‌ها (Claim Severity) مدل‌سازی شده و در نهایت زیان مورد انتظار (Expected Loss) برای هر بیمه‌نامه محاسبه شده است.
 
 ترکیب مدل‌های آماری در R و ابزارهای تحلیل داده در Excel امکان بررسی ریسک از دیدگاه آماری و کسب‌وکاری را فراهم کرده است.
@@ -12,26 +11,8 @@
 ---
 
 # داده‌ها (Dataset)
-
-داده استفاده‌شده مربوط به بیمه مسئولیت مدنی خودرو (Motor Third-Party Liability) است.
-داده استفاده‌شده در این پروژه، دیتاست عمومی **French Motor Third-Party Liability (freMTPL2)** است که برای تحلیل ریسک بیمه خودرو ارائه شده است.
-
-این دیتاست شامل اطلاعات مربوط به بیمه‌نامه‌های خودرو، ویژگی‌های ریسک بیمه‌گذار و خودرو، Exposure، تعداد خسارت‌ها (Claim Count) و مبلغ خسارت‌ها (Claim Amount) است.
-
-منبع داده:
-
-Dua, D. and Graff, C. (2019).  
-UCI Machine Learning Repository: French Motor Third-Party Liability Claims Dataset.
-Dataset source:
-CASdatasets R package – freMTPL2freq and freMTPL2sev dataset
-**نام دیتاست:**  
-French Motor Third-Party Liability (freMTPL2)
-
-**منبع داده:**  
-CASdatasets R package (freMTPL2freq و freMTPL2sev)
-
-**نوع داده:**  
-داده‌های بیمه خودرو (Motor Third-Party Liability Insurance)
+ 
+داده استفاده‌شده در این پروژه، دیتاست عمومی**French Motor Third-Party Liability (freMTPL2)** است.
 
 **تعداد رکوردها:**  
 678,013 بیمه‌نامه
@@ -54,7 +35,7 @@ CASdatasets R package (freMTPL2freq و freMTPL2sev)
 - مدل‌سازی تعداد خسارت‌ها (Frequency)
 - مدل‌سازی شدت خسارت‌ها (Severity)
 - محاسبه Expected Loss برای هر بیمه‌نامه
----
+- یافتن بیشترین عوامل موثر بر تعداد و شدت خسارت
 
 # روش انجام پروژه (Methodology)
 
@@ -65,16 +46,10 @@ CASdatasets R package (freMTPL2freq و freMTPL2sev)
 روش استفاده‌شده:
 
 - Poisson Generalized Linear Model (Poisson GLM)
-- استفاده از Exposure به عنوان Offset
-
-خروجی:
-
-- پیش‌بینی تعداد خسارت مورد انتظار
-- بررسی عوامل مؤثر بر Frequency
+- استفاده از Exposure به عنوان Offset  
 
 
 ---
-
 ## 2. مدل‌سازی شدت خسارت (Severity Modeling)
 
 هدف: بررسی مبلغ متوسط خسارت در صورت وقوع خسارت.
@@ -167,6 +142,6 @@ Frequency × Severity
 
 ---
 
-# هدف یادگیری و کاربرد
+# هدف و کاربرد
 
 این پروژه با تمرکز بر کاربردهای علم داده در صنعت بیمه انجام شده و شامل مراحل اصلی یک فرآیند تحلیل ریسک بیمه‌ای از آماده‌سازی داده تا مدل‌سازی، ارزیابی و ارائه نتایج است.
