@@ -112,24 +112,6 @@ Frequency × Severity
 
 ---
 
-# ساختار پروژه
-├── R
-│ ├── Frequency Modeling
-│ ├── Severity Modeling
-│ ├── Model Validation
-│ ├── Expected Loss Calculation
-│ └── Risk Factor Analysis
-│
-├── Excel
-│ └── Data Analysis and Dashboard Description
-│
-└── Dashboard
-└── Dashboard Preview
-
-
-
----
-
 # ابزارهای استفاده‌شده
 
 - R
