@@ -108,16 +108,7 @@ The importance of explanatory variables was assessed using the following methods
 # Excel Analysis and Dashboard
 
 In addition to statistical modeling, an analytical dashboard was developed in Excel.
-
-**Tools used:**
-
-* Power Query
-
-* Pivot Table
-
-* Pivot Chart
-
-* Power Pivot
+ 
 
 **Dashboard features:**
 
@@ -135,21 +126,10 @@ In addition to statistical modeling, an analytical dashboard was developed in Ex
 
 ---
 
-# Tools Used
+## Tools Used
+ 
 
-* R
-
-* RStudio
-
-* Excel
-
-* Power Query
-
-* Power Pivot
-
-* Pivot Table
-
-* DAX
+`R` · `Excel` · `Power Query` · `Power Pivot` · `DAX`
 
 * َِي
 ---
