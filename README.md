@@ -1,129 +1,173 @@
-# تحلیل ریسک بیمه خودرو با استفاده از مدل‌های آماری و داشبورد تحلیلی
+ # Motor Insurance Risk Analysis Using Statistical Models and an Analytical Dashboard
 
-## معرفی پروژه
+## Project Overview
 
-هدف پروژه: تحلیل عوامل مؤثر بر ریسک بیمه شخص ثالث خودرو
-در این پروژه، تعداد خسارت‌ها (Claim Frequency) و شدت خسارت‌ها (Claim Severity) مدل‌سازی شده و در نهایت زیان مورد انتظار (Expected Loss) برای هر بیمه‌نامه محاسبه شده است.
+**Project Objective:** Analyze factors affecting third-party motor insurance risk.
 
-ترکیب مدل‌های آماری در R و ابزارهای تحلیل داده در Excel امکان بررسی ریسک از دیدگاه آماری و کسب‌وکاری را فراهم کرده است.
+In this project, **Claim Frequency** and **Claim Severity** were modeled, and **Expected Loss** was calculated for each policy.
+
+Combining statistical modeling in R with data analysis tools in Excel provides both a statistical and business-oriented view of insurance risk.
+
+---
+
+# Dataset
+
+The dataset used in this project is the publicly available **French Motor Third-Party Liability (freMTPL2)** dataset.
+
+**Number of records:** 678,013 policies
+
+**Key Variables:**
+
+* **Exposure:** The amount of time a policy is exposed to risk
+
+* **ClaimNb:** Number of claims
+
+* **Total Claim Amount:** Total amount of claims
+
+* **VehPower:** Vehicle power
+
+* **VehAge:** Vehicle age
+
+* **DrivAge:** Driver age
+
+* **BonusMalus:** Driver risk index
+
+* **VehBrand:** Vehicle brand
+
+* **VehGas:** Fuel type
+
+* **Area and Region:** Geographical information
+
+**Analysis Objectives:**
+
+* Model **Claim Frequency**
+
+* Model **Claim Severity**
+
+* Calculate **Expected Loss** for each policy
+
+* Identify the most influential factors affecting claim frequency and severity
+
+# Methodology
+
+## 1. Claim Frequency Modeling
+
+**Objective:** Predict the expected number of claims for each policy.
+
+**Method used:**
+
+* **Poisson Generalized Linear Model (Poisson GLM)**
 
 
 ---
 
-# داده‌ها (Dataset)
- 
-داده استفاده‌شده در این پروژه، دیتاست عمومی**French Motor Third-Party Liability (freMTPL2)** است.
+## 2. Claim Severity Modeling
 
-**تعداد رکوردها:**  
-678,013 بیمه‌نامه
+**Objective:** Analyze the average claim amount conditional on a claim occurring.
 
-**متغیرهای اصلی:**
+**Models evaluated:**
 
-- Exposure: میزان در معرض ریسک بودن بیمه‌نامه
-- ClaimNb: تعداد خسارت‌ها
-- Total Claim Amount: مبلغ کل خسارت‌ها
-- VehPower: قدرت خودرو
-- VehAge: سن خودرو
-- DrivAge: سن راننده
-- BonusMalus: شاخص ریسک راننده
-- VehBrand: برند خودرو
-- VehGas: نوع سوخت
-- Area و Region: اطلاعات جغرافیایی
+* **Gamma GLM**
 
-**هدف تحلیل:**
+* **Lognormal Regression**
 
-- مدل‌سازی تعداد خسارت‌ها (Frequency)
-- مدل‌سازی شدت خسارت‌ها (Severity)
-- محاسبه Expected Loss برای هر بیمه‌نامه
-- یافتن بیشترین عوامل موثر بر تعداد و شدت خسارت
-
-# روش انجام پروژه (Methodology)
-
-## 1. مدل‌سازی فرکانس خسارت (Frequency Modeling)
-
-هدف: پیش‌بینی تعداد مورد انتظار خسارت برای هر بیمه‌نامه.
-
-روش استفاده‌شده:
-
-- Poisson Generalized Linear Model (Poisson GLM)
-- استفاده از Exposure به عنوان Offset  
-
-
----
-## 2. مدل‌سازی شدت خسارت (Severity Modeling)
-
-هدف: بررسی مبلغ متوسط خسارت در صورت وقوع خسارت.
-
-مدل‌های بررسی‌شده:
-
-- Gamma GLM
-- Lognormal Regression
-
-مدل‌ها با استفاده از معیارهای خطا روی داده آزمون مقایسه شدند.
-
+The models were compared using error metrics on the test dataset.
 
 ---
 
-## 3. محاسبه زیان مورد انتظار (Expected Loss)
+## 3. Expected Loss Calculation
 
-Expected Loss از رابطه زیر محاسبه شد:
+Expected Loss was calculated as:
 
-Frequency × Severity
+**Frequency × Severity**
 
-این معیار برای تخمین ریسک مورد انتظار هر بیمه‌نامه استفاده شد.
-
-
----
-
-## 4. تحلیل عوامل ریسک (Risk Factor Analysis)
-
-برای بررسی اهمیت متغیرها از روش‌های زیر استفاده شد:
-
-- Likelihood Ratio Test برای مدل Frequency
-- F-test برای مدل Severity
-- بررسی ضرایب مدل برای تحلیل جهت رابطه
-- تحلیل Expected Loss در گروه‌های مختلف ریسک
-
+This measure was used to estimate the expected risk associated with each policy.
 
 ---
 
-# تحلیل و داشبورد Excel
+## 4. Risk Factor Analysis
 
-در کنار مدل‌سازی آماری، یک داشبورد تحلیلی در Excel توسعه داده شد.
+The importance of explanatory variables was assessed using the following methods:
 
-ابزارهای استفاده‌شده:
+* **Likelihood Ratio Test** for the Frequency model
 
-- Power Query
-- Pivot Table
-- Pivot Chart
-- Power Pivot
+* **F-test** for the Severity model
 
-قابلیت‌های داشبورد:
+* Examination of model coefficients to interpret the direction of relationships
 
-- نمایش KPIهای اصلی
-- تحلیل Frequency و Severity
-- بررسی گروه‌های مختلف ریسک
-- فیلتر تعاملی با Slicer
-
-
-نمونه داشبورد:
-[مشاهده داشبورد](Dashboard)
-
+* Analysis of Expected Loss across different risk groups
 
 ---
 
-# ابزارهای استفاده‌شده
+# Excel Analysis and Dashboard
 
-- R
-- RStudio
-- Excel
-- Power Query
-- Power Pivot
-- Pivot Table
+In addition to statistical modeling, an analytical dashboard was developed in Excel.
 
+**Tools used:**
+
+* Power Query
+
+* Pivot Table
+
+* Pivot Chart
+
+* Power Pivot
+
+**Dashboard features:**
+
+* Display of key performance indicators (KPIs)
+
+* Frequency and Severity analysis
+
+* Analysis of different risk groups
+
+* Interactive filtering using Slicers
+
+**Dashboard:**
+
+[View Dashboard](Dashboard)
 
 ---
 
-# هدف و کاربرد
+# Tools Used
 
-این پروژه با تمرکز بر کاربردهای علم داده در صنعت بیمه انجام شده و شامل مراحل اصلی یک فرآیند تحلیل ریسک بیمه‌ای از آماده‌سازی داده تا مدل‌سازی، ارزیابی و ارائه نتایج است.
+* R
+
+* RStudio
+
+* Excel
+
+* Power Query
+
+* Power Pivot
+
+* Pivot Table
+
+* DAX
+
+* َِي
+---
+
+# Purpose and Application
+
+This project focuses on the application of data science in the insurance industry and covers the main stages of an insurance risk analysis workflow, from data preparation and statistical modeling to model evaluation and results presentation.
+
+# Project Workflow
+
+Raw Data
+
+↓
+
+Preprocessing
+
+↓
+
+EDA & Statistical Analysis (R)
+
+↓
+
+Data Modeling (Power Query / Power Pivot)
+
+↓
+
+Interactive Excel Dashboard
