@@ -11,8 +11,8 @@ Combining statistical modeling in R with data analysis tools in Excel provides b
 ---
 
 ## Dashboard overview
-
-![Dashboard Demo](dashboard_demo.gif)
+ 
+![Dashboard Demo](Dashboard/dashboard_demo.gif)
 
 ---
 
