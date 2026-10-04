@@ -131,7 +131,6 @@ In addition to statistical modeling, an analytical dashboard was developed in Ex
 
 `R` · `Excel` · `Power Query` · `Power Pivot` · `DAX`
 
-* َِي
 ---
 
 # Purpose and Application
