@@ -1,51 +1,57 @@
-##آماده سازی دیتا و تهیه داشبورد با Excel
+## Data Preparation and Dashboard Development Using Excel
 
-## آماده‌سازی داده‌ها (Data Preparation)
+## Data Preparation
 
-مراحل آماده‌سازی داده‌ها در Excel با استفاده از ابزارهای زیر انجام شد:
+tools and steps:
 
-- Power Query برای پاکسازی، تبدیل و آماده‌سازی داده‌ها
-- ایجاد جداول تحلیلی مناسب برای گزارش‌گیری
-- مدیریت ساختار داده برای استفاده در Pivot Table و Dashboard
+* Power Query for data cleaning, transformation, and preparation
 
+* Creating appropriate analytical tables for reporting
 
+* Managing the data structure for use in Pivot Tables and the Dashboard
 
-## تحلیل داده‌ها (Data Analysis)
+## Data Analysis
 
-برای بررسی ویژگی‌های پرتفوی بیمه‌ای از ابزارهای زیر استفاده شد:
+tools used to analyze the characteristics of the insurance portfolio:
 
-- Pivot Table برای خلاصه‌سازی و تحلیل داده‌ها
-- Pivot Chart برای نمایش روندها و مقایسه‌ها
-- Power Pivot برای مدیریت محاسبات و شاخص‌ها (KPI)
+* Pivot Table for data summarization and analysis
 
+* Pivot Chart for visualizing trends and comparisons
 
-شاخص‌ها و تحلیل‌های انجام‌شده شامل موارد زیر هستند:
+* Power Pivot for managing calculations and KPIs
 
-- تعداد خسارت‌ها (Claim Count)
-- مبلغ کل خسارت‌ها (Total Claim Amount)
-- شدت خسارت (Severity)
-- فرکانس خسارت (Claim Frequency)
-- زیان مورد انتظار (Expected Loss)
-- تحلیل گروه‌های مختلف ریسک
+The following metrics and analyses were performed:
 
+* Number of Claims (Claim Count)
 
+* Total Claim Amount
 
-## داشبورد تعاملی (Interactive Dashboard)
+* Claim Severity
 
-یک داشبورد تعاملی برای بررسی وضعیت ریسک پرتفوی طراحی شد.
+* Claim Frequency
 
-امکانات داشبورد:
+* Expected Loss
 
-- نمایش KPIهای اصلی
-- استفاده از Slicer برای فیلتر تعاملی
-- بررسی عوامل مختلف ریسک
-- مقایسه گروه‌های مختلف بیمه‌نامه‌ها
-- نمایش خروجی‌های مدل‌سازی آماری در قالب قابل فهم برای کسب‌وکار
+* Analysis of different risk groups
 
+## Interactive Dashboard
 
+An interactive dashboard was developed to assess the risk profile of the insurance portfolio.
 
-## ارتباط با مدل‌های آماری
+**Dashboard features:**
 
-خروجی مدل‌های Frequency و Severity که در محیط R توسعه داده شدند، در این بخش برای تحلیل و نمایش Business Intelligence استفاده شده‌اند.
+* Display of key KPIs
 
-ترکیب مدل‌های آماری و داشبورد Excel امکان بررسی بهتر الگوهای ریسک و عوامل مؤثر بر خسارت را فراهم می‌کند.
+* Interactive filtering using Slicers
+
+* Analysis of different risk factors
+
+* Comparison of different groups of policies
+
+* Presentation of statistical modeling outputs in a business-friendly format
+
+## Integration with Statistical Models
+
+The outputs of the Frequency and Severity models developed in R were incorporated into this section for **Business Intelligence** analysis and visualization.
+
+Combining statistical models with an Excel dashboard enables a better understanding of risk patterns and the factors affecting claims.
