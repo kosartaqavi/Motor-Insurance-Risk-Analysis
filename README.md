@@ -10,6 +10,12 @@ Combining statistical modeling in R with data analysis tools in Excel provides b
 
 ---
 
+## Dashboard overview
+
+![Dashboard Demo](dashboard_demo.gif)
+
+---
+
 # Dataset
 
 The dataset used in this project is the publicly available **French Motor Third-Party Liability (freMTPL2)** dataset.
